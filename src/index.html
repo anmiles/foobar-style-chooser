@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Styler</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+	</head>
+	<body>
+		<div class="main">
+			<!-- ko foreach: sections -->
+				<div class="section" data-bind="class: title, foreach: styles">
+					<a class="button" data-bind="text: title, click: toggle, css: {enabled: enabled}"></a>
+				</div>
+			<!-- /ko -->
+			<div class="section output">
+				<a class="button" type="text" data-bind="text: toString"></a>
+			</div>
+		</div>
+	</body>
+	<script type="module" src="index.js"></script>
+</html>

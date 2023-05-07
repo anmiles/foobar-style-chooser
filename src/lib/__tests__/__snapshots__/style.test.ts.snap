@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/lib/style should construct style 1`] = `
+Style {
+  "enabled": [Function],
+  "title": "title",
+}
+`;

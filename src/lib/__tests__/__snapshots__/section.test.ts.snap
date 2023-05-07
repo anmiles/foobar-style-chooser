@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/lib/section should construct section 1`] = `
+Section {
+  "styles": [
+    Style {
+      "enabled": [Function],
+      "title": "style1",
+    },
+    Style {
+      "enabled": [Function],
+      "title": "style2",
+    },
+  ],
+  "title": "section1",
+}
+`;

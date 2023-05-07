@@ -1,0 +1,79 @@
+[
+	{
+		"title"  : "genres",
+		"styles" : [
+			"Ambient",
+			"Avantgarde",
+			"Ballad",
+			"Classical",
+			"Downtempo",
+			"Dub",
+			"Dubstep",
+			"Ethnic",
+			"Hardcore",
+			"House",
+			"Jazz",
+			"Jungle",
+			"Latin",
+			"Metal",
+			"NewAge",
+			"NuMetal",
+			"Pop",
+			"Punk",
+			"Rap",
+			"Reggae",
+			"Retro",
+			"Rock",
+			"RockBallad",
+			"RocknRoll",
+			"Sacred",
+			"Soundtrack",
+			"Southern",
+			"Trance"
+		]
+	},
+	{
+		"title"  : "instruments",
+		"styles" : [
+			"8bit",
+			"Choir",
+			"Drive",
+			"Electronic",
+			"Guitar",
+			"Nature",
+			"Orchestra",
+			"Piano",
+			"Vargan",
+			"Violin"
+		]
+	},
+	{
+		"title"  : "themes",
+		"styles" : [
+			"Active",
+			"Atmosphere",
+			"Chant",
+			"Children",
+			"Coffee",
+			"Dance",
+			"Depress",
+			"Deutsch",
+			"Festival",
+			"Happy",
+			"History",
+			"Holiday",
+			"Instrumental",
+			"Keys",
+			"Long",
+			"Love",
+			"Massage",
+			"PlayCalimba",
+			"PlayGuitar",
+			"PlayPiano",
+			"Run",
+			"Sleep",
+			"Sport",
+			"Walk"
+		]
+	}
+]
