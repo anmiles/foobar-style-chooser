@@ -1,3 +1,4 @@
+import fs from 'fs';
 import ko from 'knockout';
 import { Model } from '../model';
 import { Section } from '../section';
@@ -22,6 +23,10 @@ const styleCollection: Record<string, boolean> = {
 	style3 : true,
 	style4 : false,
 };
+
+if (!fs.existsSync('sections.json')) {
+	fs.cpSync('sections.sample.json', 'sections.json');
+}
 
 jest.doMock('../../../sections.json', () => require('../../../sections.sample.json'));
 
