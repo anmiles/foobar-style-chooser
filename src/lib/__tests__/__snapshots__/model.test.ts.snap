@@ -7,15 +7,15 @@ Model {
       "styles": [
         Style {
           "enabled": [Function],
+          "title": "8bit",
+        },
+        Style {
+          "enabled": [Function],
           "title": "Ambient",
         },
         Style {
           "enabled": [Function],
           "title": "Avantgarde",
-        },
-        Style {
-          "enabled": [Function],
-          "title": "Ballad",
         },
         Style {
           "enabled": [Function],
@@ -75,6 +75,10 @@ Model {
         },
         Style {
           "enabled": [Function],
+          "title": "Psy",
+        },
+        Style {
+          "enabled": [Function],
           "title": "Punk",
         },
         Style {
@@ -124,10 +128,6 @@ Model {
       "styles": [
         Style {
           "enabled": [Function],
-          "title": "8bit",
-        },
-        Style {
-          "enabled": [Function],
           "title": "Choir",
         },
         Style {
@@ -141,6 +141,10 @@ Model {
         Style {
           "enabled": [Function],
           "title": "Guitar",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Instrumental",
         },
         Style {
           "enabled": [Function],
@@ -217,10 +221,6 @@ Model {
         },
         Style {
           "enabled": [Function],
-          "title": "Instrumental",
-        },
-        Style {
-          "enabled": [Function],
           "title": "Keys",
         },
         Style {
@@ -246,6 +246,10 @@ Model {
         Style {
           "enabled": [Function],
           "title": "PlayPiano",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Relax",
         },
         Style {
           "enabled": [Function],

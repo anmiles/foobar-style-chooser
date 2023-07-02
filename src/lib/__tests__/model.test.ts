@@ -23,11 +23,11 @@ const styleCollection: Record<string, boolean> = {
 	style4 : false,
 };
 
+jest.doMock('../../../sections.json', () => require('../../../sections.sample.json'));
+
 beforeEach(() => {
 	mockStyle = true;
 });
-
-Model.prototype['getSections'] = () => require('../../../sections.sample.json');
 
 describe('src/lib/model', () => {
 	it('should construct model with 2 sections', () => {

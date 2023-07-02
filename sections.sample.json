@@ -2,9 +2,9 @@
 	{
 		"title"  : "genres",
 		"styles" : [
+			"8bit",
 			"Ambient",
 			"Avantgarde",
-			"Ballad",
 			"Classical",
 			"Downtempo",
 			"Dub",
@@ -19,6 +19,7 @@
 			"NewAge",
 			"NuMetal",
 			"Pop",
+			"Psy",
 			"Punk",
 			"Rap",
 			"Reggae",
@@ -35,11 +36,11 @@
 	{
 		"title"  : "instruments",
 		"styles" : [
-			"8bit",
 			"Choir",
 			"Drive",
 			"Electronic",
 			"Guitar",
+			"Instrumental",
 			"Nature",
 			"Orchestra",
 			"Piano",
@@ -62,7 +63,6 @@
 			"Happy",
 			"History",
 			"Holiday",
-			"Instrumental",
 			"Keys",
 			"Long",
 			"Love",
@@ -70,6 +70,7 @@
 			"PlayCalimba",
 			"PlayGuitar",
 			"PlayPiano",
+			"Relax",
 			"Run",
 			"Sleep",
 			"Sport",

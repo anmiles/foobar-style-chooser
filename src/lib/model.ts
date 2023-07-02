@@ -24,7 +24,6 @@ class Model {
 
 	}
 
-	/* istanbul ignore next */
 	private getSections(): Sections {
 		return require('../../sections.json');
 	}
