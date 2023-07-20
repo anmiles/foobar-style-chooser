@@ -6,13 +6,24 @@ export { Model };
 
 class Model {
 	sections: Section[];
-	toString: ko.Computed<string>;
+	value: ko.PureComputed<string>;
 
 	constructor() {
 		const sectionsJSON = this.getSections();
 		this.sections      = sectionsJSON.map(({ title, styles }) => new Section(title, styles));
 
-		this.toString = ko.computed(() => `:${this.sections
+		this.value = ko.pureComputed({
+			read  : () => this.combine(),
+			write : (value: string) => this.parse(value),
+		});
+	}
+
+	private getSections(): Sections {
+		return require('../../sections.json');
+	}
+
+	private combine(): string {
+		return `:${this.sections
 			.map(
 				(section) => section.styles
 					.filter((style) => style.enabled())
@@ -20,11 +31,20 @@ class Model {
 			)
 			.flat()
 			.sort()
-			.join(':')}:`);
-
+			.join(':')}:`;
 	}
 
-	private getSections(): Sections {
-		return require('../../sections.json');
+	private parse(value: string): void {
+		const styles = value.split(':').filter((v) => v);
+
+		this.sections
+			.forEach(
+				(section) => section.styles
+					.forEach((style) => style.enabled(styles.includes(style.title))),
+			);
+	}
+
+	private input(_model: Model, event: { target: { value: string }}) {
+		this.parse(event.target.value);
 	}
 }

@@ -1,28 +1,34 @@
 import fs from 'fs';
-import ko from 'knockout';
 import { Model } from '../model';
 import { Section } from '../section';
 import { Style } from '../style';
 
-const originalStyle = jest.requireActual('../style').Style;
-jest.mock<{Style: typeof Style.prototype.constructor}>('../style', () => ({
-	Style : jest.fn().mockImplementation((title: string) => mockStyle
-		? {
-			title,
-			enabled : () => styleCollection[title],
-		}
-		: new originalStyle(title),
-	),
-}));
-
-let mockStyle: boolean;
-
-const styleCollection: Record<string, boolean> = {
+const enabledStyles: Record<string, boolean> = {
 	style1 : true,
 	style2 : false,
 	style3 : true,
 	style4 : false,
 };
+
+function createModel(): { model: Model, allStyles: Style[] } {
+	const model = new Model();
+
+	model.sections = [
+		new Section('section1', [ 'style1', 'style2' ]),
+		new Section('section2', [ 'style3', 'style4' ]),
+	];
+
+	const allStyles = model.sections.map((section) => section.styles).flat();
+
+	allStyles.forEach((style) => {
+		style.enabled(enabledStyles[style.title]);
+	});
+
+	return {
+		model,
+		allStyles,
+	};
+}
 
 if (!fs.existsSync('sections.json')) {
 	fs.cpSync('sections.sample.json', 'sections.json');
@@ -30,48 +36,69 @@ if (!fs.existsSync('sections.json')) {
 
 jest.doMock('../../../sections.json', () => require('../../../sections.sample.json'));
 
-beforeEach(() => {
-	mockStyle = true;
-});
-
 describe('src/lib/model', () => {
 	it('should construct model with 2 sections', () => {
-		mockStyle = false;
-
 		const model = new Model();
 
 		expect(model).toMatchSnapshot();
 	});
 
-	describe('toString', () => {
-		let computedSpy: jest.SpyInstance;
+	describe('value', () => {
+		describe('read', () => {
+			it('should return joined result of section.value', () => {
+				const { model } = createModel();
 
-		beforeAll(() => {
-			computedSpy = jest.spyOn(ko, 'computed').mockImplementation((func) => func as any);
+				expect(model.value()).toEqual(':style1:style3:');
+			});
+
+			it('should sort styles alphabetically', () => {
+				const { model } = createModel();
+
+				expect(model.value()).toEqual(':style1:style3:');
+			});
 		});
 
-		afterAll(() => {
-			computedSpy.mockRestore();
+		describe('write', () => {
+			it('should make styles enabled based on splitted value', () => {
+				const { model, allStyles } = createModel();
+
+				model.value(':style2:style4:');
+
+				const enabledStyles = allStyles
+					.filter((style) => style.enabled())
+					.map((style) => style.title);
+
+				expect(model.value()).toEqual(':style2:style4:');
+				expect(enabledStyles).toEqual([ 'style2', 'style4' ]);
+			});
+
+			it('should sort styles alphabetically', () => {
+				const { model, allStyles } = createModel();
+
+				model.value(':style4:style2:');
+
+				const enabledStyles = allStyles
+					.filter((style) => style.enabled())
+					.map((style) => style.title);
+
+				expect(model.value()).toEqual(':style2:style4:');
+				expect(enabledStyles).toEqual([ 'style2', 'style4' ]);
+			});
 		});
 
-		it('should return joined result of section.toString', () => {
-			const model    = new Model();
-			model.sections = [
-				new Section('section1', [ 'style1', 'style2' ]),
-				new Section('section2', [ 'style3', 'style4' ]),
-			];
+		describe('input', () => {
+			it('should call parse function with string value', () => {
+				const { model } = createModel();
+				const parseSpy  = jest.spyOn(model as any, 'parse');
 
-			expect(model.toString()).toEqual(':style1:style3:');
+				const value = 'value';
+				const event = { target : { value } };
+
+				model['input'](model, event);
+
+				expect(parseSpy).toHaveBeenCalledWith(value);
+			});
 		});
 
-		it('should sort styles alphabetically', () => {
-			const model    = new Model();
-			model.sections = [
-				new Section('section2', [ 'style4', 'style3' ]),
-				new Section('section1', [ 'style2', 'style1' ]),
-			];
-
-			expect(model.toString()).toEqual(':style1:style3:');
-		});
 	});
 });

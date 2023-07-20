@@ -271,6 +271,6 @@ Model {
       "title": "themes",
     },
   ],
-  "toString": [Function],
+  "value": [Function],
 }
 `;
