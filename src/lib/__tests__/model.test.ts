@@ -14,8 +14,8 @@ function createModel(): { model: Model, allStyles: Style[] } {
 	const model = new Model();
 
 	model.sections = [
-		new Section('section1', [ 'style1', 'style2' ]),
-		new Section('section2', [ 'style3', 'style4' ]),
+		new Section({ title : 'section1', styles : [ 'style1', 'style2' ] }),
+		new Section({ title : 'section2', styles : [ 'style3', 'style4' ] }),
 	];
 
 	const allStyles = model.sections.map((section) => section.styles).flat();

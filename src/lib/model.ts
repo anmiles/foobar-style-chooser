@@ -10,7 +10,7 @@ class Model {
 
 	constructor() {
 		const sectionsJSON = this.getSections();
-		this.sections      = sectionsJSON.map(({ title, styles }) => new Section(title, styles));
+		this.sections      = sectionsJSON.map(({ title, hidden, styles }) => new Section({ title, hidden, styles }));
 
 		this.value = ko.pureComputed({
 			read  : () => this.combine(),

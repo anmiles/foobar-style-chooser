@@ -76,5 +76,35 @@
 			"Sport",
 			"Walk"
 		]
+	},
+	{
+		"title"  : "other",
+		"hidden": "true",
+		"styles" : [
+			"Active",
+			"Atmosphere",
+			"Chant",
+			"Children",
+			"Coffee",
+			"Dance",
+			"Depress",
+			"Deutsch",
+			"Festival",
+			"Happy",
+			"History",
+			"Holiday",
+			"Keys",
+			"Long",
+			"Love",
+			"Massage",
+			"PlayCalimba",
+			"PlayGuitar",
+			"PlayPiano",
+			"Relax",
+			"Run",
+			"Sleep",
+			"Sport",
+			"Walk"
+		]
 	}
 ]

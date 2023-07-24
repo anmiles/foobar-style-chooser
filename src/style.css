@@ -43,6 +43,10 @@ body, input, button {
     grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+.section {
+	color: hsl(20, 50%, 50%);
+}
+
 .section.genres {
 	color: hsl(120, 50%, 50%);
 }
@@ -51,8 +55,8 @@ body, input, button {
 	color: hsl(200, 50%, 50%);
 }
 
-.section.themes {
-	color: hsl(20, 50%, 50%);
+.section.hidden {
+	display: none;
 }
 
 .section.output {

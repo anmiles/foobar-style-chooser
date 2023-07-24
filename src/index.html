@@ -6,7 +6,7 @@
 	<body>
 		<div class="main">
 			<!-- ko foreach: sections -->
-				<div class="section" data-bind="class: title, foreach: styles">
+				<div class="section" data-bind="class: title, foreach: styles, css: { hidden: hidden }">
 					<a class="button" data-bind="text: title, click: toggle, css: {enabled: enabled}"></a>
 				</div>
 			<!-- /ko -->
