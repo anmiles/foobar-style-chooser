@@ -2,6 +2,7 @@
 
 exports[`src/lib/section should construct section 1`] = `
 Section {
+  "hidden": false,
   "styles": [
     Style {
       "enabled": [Function],

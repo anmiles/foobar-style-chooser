@@ -4,6 +4,7 @@ exports[`src/lib/model should construct model with 2 sections 1`] = `
 Model {
   "sections": [
     Section {
+      "hidden": false,
       "styles": [
         Style {
           "enabled": [Function],
@@ -125,6 +126,7 @@ Model {
       "title": "genres",
     },
     Section {
+      "hidden": false,
       "styles": [
         Style {
           "enabled": [Function],
@@ -170,6 +172,7 @@ Model {
       "title": "instruments",
     },
     Section {
+      "hidden": false,
       "styles": [
         Style {
           "enabled": [Function],
@@ -269,6 +272,108 @@ Model {
         },
       ],
       "title": "themes",
+    },
+    Section {
+      "hidden": "true",
+      "styles": [
+        Style {
+          "enabled": [Function],
+          "title": "Active",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Atmosphere",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Chant",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Children",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Coffee",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Dance",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Depress",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Deutsch",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Festival",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Happy",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "History",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Holiday",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Keys",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Long",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Love",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Massage",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "PlayCalimba",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "PlayGuitar",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "PlayPiano",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Relax",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Run",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Sleep",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Sport",
+        },
+        Style {
+          "enabled": [Function],
+          "title": "Walk",
+        },
+      ],
+      "title": "other",
     },
   ],
   "value": [Function],
