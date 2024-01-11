@@ -2,11 +2,11 @@ import ko from 'knockout';
 export { Style };
 
 class Style {
-	title: string;
-	enabled: (value?: boolean) => boolean;
+	enabled: ko.Observable<boolean>;
 
-	constructor(title: string) {
-		this.title   = title;
+	constructor(
+		public title: string,
+	) {
 		this.enabled = ko.observable(false);
 	}
 
