@@ -44,6 +44,7 @@ class Model {
 			);
 	}
 
+	// @ts-ignore
 	private input(_model: Model, event: { target: { value: string }}) {
 		this.parse(event.target.value);
 	}

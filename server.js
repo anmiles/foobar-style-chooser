@@ -1,6 +1,6 @@
-const path    = require('path');
-const express = require('express');
-const open    = require('open');
+const path     = require('path');
+const express  = require('express');
+const { open } = require('out-url');
 
 const port = process.env.PORT || 0;
 const app  = express();

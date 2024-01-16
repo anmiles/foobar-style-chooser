@@ -21,7 +21,13 @@ function createModel(): { model: Model, allStyles: Style[] } {
 	const allStyles = model.sections.map((section) => section.styles).flat();
 
 	allStyles.forEach((style) => {
-		style.enabled(enabledStyles[style.title]);
+		const enabled = enabledStyles[style.title];
+
+		if (typeof enabled === 'undefined') {
+			throw `Cannot index 'enabledStyles' with ${style.title}`;
+		}
+
+		style.enabled(enabled);
 	});
 
 	return {

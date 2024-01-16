@@ -9,9 +9,8 @@ module.exports = {
 	module : {
 		rules : [
 			{
-				test    : /\.tsx?$/,
-				use     : 'ts-loader',
-				exclude : /node_modules/,
+				test : /\.tsx?$/,
+				use  : 'ts-loader',
 			},
 		],
 	},
@@ -22,10 +21,7 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns : [
 				{
-					from        : 'src',
-					globOptions : {
-						ignore : [ '**/*.ts' ],
-					  },
+					from : 'src/static',
 				},
 			],
 		}),

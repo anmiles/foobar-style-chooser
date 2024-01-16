@@ -1,13 +1,15 @@
 module.exports = {
-	testEnvironment : 'jsdom',
-	preset          : 'ts-jest',
+	preset    : 'ts-jest',
+	transform : {
+		'^.+\\.tsx?$' : 'ts-jest',
+	},
+
 	clearMocks      : true,
+	testEnvironment : 'jsdom',
 
 	roots     : [ '<rootDir>/src' ],
 	testMatch : [ '<rootDir>/src/**/__tests__/*.test.ts' ],
-	transform : {
-		'^.+\\.ts$' : 'ts-jest',
-	},
+
 	collectCoverageFrom : [
 		'<rootDir>/src/**/*.ts',
 		'!<rootDir>/src/**/*.d.ts',
