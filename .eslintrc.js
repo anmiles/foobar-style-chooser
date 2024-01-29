@@ -8,4 +8,9 @@ module.exports = {
 		jest    : true,
 		browser : true,
 	},
+	ignorePatterns : [
+		'**/node_modules/',
+		'coverage/',
+		'dist/',
+	],
 };
