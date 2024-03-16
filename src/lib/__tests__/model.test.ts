@@ -1,7 +1,8 @@
 import fs from 'fs';
 import { Model } from '../model';
 import { Section } from '../section';
-import { Style } from '../style';
+import type { Sections } from '../section';
+import type { Style } from '../style';
 
 const enabledStyles: Record<string, boolean> = {
 	style1 : true,
@@ -10,7 +11,7 @@ const enabledStyles: Record<string, boolean> = {
 	style4 : false,
 };
 
-function createModel(): { model: Model, allStyles: Style[] } {
+function createModel(): { model : Model; allStyles : Style[] } {
 	const model = new Model();
 
 	model.sections = [
@@ -24,7 +25,7 @@ function createModel(): { model: Model, allStyles: Style[] } {
 		const enabled = enabledStyles[style.title];
 
 		if (typeof enabled === 'undefined') {
-			throw `Cannot index 'enabledStyles' with ${style.title}`;
+			throw new Error(`Cannot index 'enabledStyles' with ${style.title}`);
 		}
 
 		style.enabled(enabled);
@@ -40,7 +41,12 @@ if (!fs.existsSync('sections.json')) {
 	fs.cpSync('sections.sample.json', 'sections.json');
 }
 
-jest.doMock('../../../sections.json', () => require('../../../sections.sample.json'));
+/* eslint-disable-next-line
+		@typescript-eslint/no-var-requires
+	-- require json by local browser path
+	TODO: rewrite when migrate to React
+*/
+jest.doMock('../../../sections.json', () => require('../../../sections.sample.json') as Sections);
 
 describe('src/lib/model', () => {
 	it('should construct model with 2 sections', () => {
@@ -95,12 +101,12 @@ describe('src/lib/model', () => {
 		describe('input', () => {
 			it('should call parse function with string value', () => {
 				const { model } = createModel();
-				const parseSpy  = jest.spyOn(model as any, 'parse');
+				const parseSpy  = jest.spyOn(model, 'parse');
 
 				const value = 'value';
 				const event = { target : { value } };
 
-				model['input'](model, event);
+				model.input(model, event);
 
 				expect(parseSpy).toHaveBeenCalledWith(value);
 			});

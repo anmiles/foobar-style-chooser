@@ -6,7 +6,7 @@ jest.mock<Partial<typeof ko>>('knockout', () => ({
 	applyBindings : jest.fn(),
 }));
 
-jest.mock<Partial<{ Model: typeof Model }>>('../model', () => ({ Model : jest.fn().mockImplementation(() => model) }));
+jest.mock<Partial<{ Model : typeof Model }>>('../model', () => ({ Model : jest.fn().mockImplementation(() => model) }));
 
 const model = { key : 'value' };
 

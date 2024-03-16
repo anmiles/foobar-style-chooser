@@ -1,8 +1,7 @@
 import ko from 'knockout';
-export { Style };
 
 class Style {
-	enabled: ko.Observable<boolean>;
+	enabled : ko.Observable<boolean>;
 
 	constructor(
 		public title: string,
@@ -10,7 +9,9 @@ class Style {
 		this.enabled = ko.observable(false);
 	}
 
-	toggle() {
+	toggle(): void {
 		this.enabled(!this.enabled());
 	}
 }
+
+export { Style };

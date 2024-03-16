@@ -1,12 +1,10 @@
 import ko from 'knockout';
-import type { Sections } from '../types';
+import type { Sections } from './section';
 import { Section } from './section';
 
-export { Model };
-
 class Model {
-	sections: Section[];
-	value: ko.PureComputed<string>;
+	sections : Section[];
+	value    : ko.PureComputed<string>;
 
 	constructor() {
 		const sectionsJSON = this.getSections();
@@ -14,12 +12,38 @@ class Model {
 
 		this.value = ko.pureComputed({
 			read  : () => this.combine(),
-			write : (value: string) => this.parse(value),
+			write : (value: string) => {
+				this.parse(value);
+			},
 		});
 	}
 
+	parse(value: string): void {
+		const styles = value.split(':').filter((v) => v);
+
+		this.sections
+			.forEach(
+				(section) => {
+					section.styles
+						.forEach((style) => {
+							style.enabled(styles.includes(style.title));
+						});
+				},
+			);
+	}
+
+	input(_model: Model, event: { target : { value : string } }): void {
+		this.parse(event.target.value);
+	}
+
 	private getSections(): Sections {
-		return require('../../sections.json');
+		/* eslint-disable-next-line
+				@typescript-eslint/no-var-requires,
+				n/no-unpublished-require
+			-- require json by local browser path
+			TODO: rewrite when migrate to React
+		*/
+		return require('../../sections.json') as Sections;
 	}
 
 	private combine(): string {
@@ -33,19 +57,6 @@ class Model {
 			.sort()
 			.join(':')}:`;
 	}
-
-	private parse(value: string): void {
-		const styles = value.split(':').filter((v) => v);
-
-		this.sections
-			.forEach(
-				(section) => section.styles
-					.forEach((style) => style.enabled(styles.includes(style.title))),
-			);
-	}
-
-	// @ts-ignore
-	private input(_model: Model, event: { target: { value: string }}) {
-		this.parse(event.target.value);
-	}
 }
+
+export { Model };
