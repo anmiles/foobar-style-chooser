@@ -10,9 +10,12 @@ Style chooser for foobar2000 tracks
 git clone https://github.com/anmiles/foobar-style-chooser.git
 cd foobar-style-chooser
 npm clean-install
-npm run build
+copy sections.sample.json sections.json
 ```
-Copy `sections.sample.json` to `sections.json` and update with your own styles
+
+## Setting up your styles
+1. Update `sections.json` with your own styles
+1. Run `npm run build`
 
 ## Usage
 
