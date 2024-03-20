@@ -38,6 +38,7 @@ jobs:
       with:
         path: "**/node_modules"
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
+    - run: copy sections.sample.json sections.json
     - run: npm run build
 
   lint:
