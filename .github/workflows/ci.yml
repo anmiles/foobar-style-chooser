@@ -26,8 +26,22 @@ jobs:
         lookup-only: true
     - run: npm ci
 
-  lint:
+  build:
     needs: install
+    runs-on: ubuntu-latest
+    container:
+      image: node:18.18
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/cache@v4
+      with:
+        path: "**/node_modules"
+        key: "node_modules-${{ hashFiles('package-lock.json') }}"
+    - run: npm run build
+
+  lint:
+    needs: build
     runs-on: ubuntu-latest
     container:
       image: node:18.18
@@ -41,7 +55,7 @@ jobs:
     - run: npm run lint
 
   test:
-    needs: install
+    needs: build
     runs-on: ubuntu-latest
     container:
       image: node:18.18

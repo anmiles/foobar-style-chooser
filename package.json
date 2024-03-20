@@ -16,7 +16,6 @@
 	},
 	"scripts": {
 		"build": "rimraf dist && webpack",
-		"build:ci": "webpack",
 		"lint": "eslint .",
 		"lint:fix": "npm run lint -- --fix",
 		"test": "jest --verbose",
