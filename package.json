@@ -28,7 +28,7 @@
 	},
 	"dependencies": {
 		"copy-webpack-plugin": "^12.0.2",
-		"express": "^4.18.3",
+		"express": "^4.19.2",
 		"knockout": "^3.5.1",
 		"out-url": "^1.2.2",
 		"webpack": "^5.90.3",
