@@ -13,12 +13,9 @@ html, body {
 	padding: 0;
 }
 
-body {
-	font-size: 20px;
-}
-
-body, input, button {
-	font-family: Arial, sans-serif;
+body, table, input, select, button, textarea {
+    font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
+    font-size: 20px;
 }
 
 .main {
