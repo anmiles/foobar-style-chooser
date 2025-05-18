@@ -76,6 +76,7 @@ jobs:
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
         lookup-only: true
     - run: npm ci
+    - run: cp config/sections.sample.json config/sections.json
     - run: npm run lint
 
   test:
@@ -92,5 +93,6 @@ jobs:
         key: "node_modules-${{ hashFiles('package-lock.json') }}"
         lookup-only: true
     - run: npm ci
+    - run: cp config/sections.sample.json config/sections.json
     - run: npm run test:ci
     - run: npm run test:report:coverage
