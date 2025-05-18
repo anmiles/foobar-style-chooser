@@ -1,0 +1,28 @@
+.section {
+	color: hsl(20, 50%, 50%);
+}
+
+.section.genres {
+	color: hsl(120, 50%, 50%);
+}
+
+.section.instruments {
+	color: hsl(200, 50%, 50%);
+}
+
+.section.output {
+	color: hsl(0, 0%, 50%);
+}
+
+.section:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: inherit;
+	background: currentColor;
+	filter: opacity(0.3);
+}

@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/App result buttons paste should apply style selections 1`] = `
+[
+  <div
+    class="section genres"
+    data-testid="section-genres"
+    role="section"
+  >
+    <a
+      class="style button isSelected"
+      data-testid="style-classical"
+      role="style"
+    >
+      Classical
+    </a>
+    <a
+      class="style button"
+      data-testid="style-avantgarde"
+      role="style"
+    >
+      Avantgarde
+    </a>
+  </div>,
+  <div
+    class="section instruments"
+    data-testid="section-instruments"
+    role="section"
+  >
+    <a
+      class="style button isSelected"
+      data-testid="style-piano"
+      role="style"
+    >
+      Piano
+    </a>
+    <a
+      class="style button"
+      data-testid="style-electronic"
+      role="style"
+    >
+      Electronic
+    </a>
+  </div>,
+  <div
+    class="section themes"
+    data-testid="section-themes"
+    role="section"
+  >
+    <a
+      class="style button"
+      data-testid="style-active"
+      role="style"
+    >
+      Active
+    </a>
+    <a
+      class="style button isSelected"
+      data-testid="style-relax"
+      role="style"
+    >
+      Relax
+    </a>
+  </div>,
+]
+`;
+
+exports[`src/App result should be rendered 1`] = `
+<div
+  class="result"
+  data-testid="result"
+>
+  <a
+    data-testid="value"
+  >
+    :
+  </a>
+  <input
+    class="button"
+    data-testid="copy"
+    type="button"
+    value="Copy"
+  />
+  <input
+    class="button"
+    data-testid="paste"
+    type="button"
+    value="Paste"
+  />
+</div>
+`;
+
+exports[`src/App section should be correctly rendered 1`] = `
+[
+  <div
+    class="section genres"
+    data-testid="section-genres"
+    role="section"
+  >
+    <a
+      class="style button"
+      data-testid="style-classical"
+      role="style"
+    >
+      Classical
+    </a>
+    <a
+      class="style button"
+      data-testid="style-avantgarde"
+      role="style"
+    >
+      Avantgarde
+    </a>
+  </div>,
+  <div
+    class="section instruments"
+    data-testid="section-instruments"
+    role="section"
+  >
+    <a
+      class="style button"
+      data-testid="style-piano"
+      role="style"
+    >
+      Piano
+    </a>
+    <a
+      class="style button"
+      data-testid="style-electronic"
+      role="style"
+    >
+      Electronic
+    </a>
+  </div>,
+  <div
+    class="section themes"
+    data-testid="section-themes"
+    role="section"
+  >
+    <a
+      class="style button"
+      data-testid="style-active"
+      role="style"
+    >
+      Active
+    </a>
+    <a
+      class="style button"
+      data-testid="style-relax"
+      role="style"
+    >
+      Relax
+    </a>
+  </div>,
+]
+`;
+
+exports[`src/App section should toggle style selection on click 1`] = `
+<a
+  class="style button"
+  data-testid="style-piano"
+  role="style"
+>
+  Piano
+</a>
+`;
+
+exports[`src/App section should toggle style selection on click 2`] = `
+<a
+  class="style button isSelected"
+  data-testid="style-piano"
+  role="style"
+>
+  Piano
+</a>
+`;
+
+exports[`src/App section should toggle style selection on click 3`] = `
+<a
+  class="style button"
+  data-testid="style-piano"
+  role="style"
+>
+  Piano
+</a>
+`;

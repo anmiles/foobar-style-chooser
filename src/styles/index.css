@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+html, body {
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body, table, input, select, button, textarea {
+	font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
+	font-size: 20px;
+}
+
+.button {
+	text-transform: capitalize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 1em;
+	color: inherit;
+	border: 1px solid currentColor;
+	border-radius: 0.5em;
+	position: relative;
+	z-index: 1;
+	padding: 16px;
+}

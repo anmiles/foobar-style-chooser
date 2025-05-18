@@ -1,0 +1,11 @@
+.result {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 16px;
+	align-items: center;
+}
+
+.result a {
+	flex-grow: 1;
+	grid-column: span 10;
+}

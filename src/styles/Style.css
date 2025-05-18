@@ -1,0 +1,12 @@
+.style {
+	background: rgba(255, 255, 255, 0.25);
+}
+
+.style:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.style.isSelected,
+.style.isSelected:hover {
+	background: white;
+}

@@ -1,0 +1,31 @@
+[
+	{
+		"title"  : "genres",
+		"styles" : [
+			"Classical",
+			"Avantgarde"
+		]
+	},
+	{
+		"title"  : "instruments",
+		"styles" : [
+			"Piano",
+			"Electronic"
+		]
+	},
+	{
+		"title"  : "themes",
+		"styles" : [
+			"Active",
+			"Relax"
+		]
+	},
+	{
+		"title"    : "other",
+		"isHidden" : true,
+		"styles"   : [
+			"Old",
+			"New"
+		]
+	}
+]

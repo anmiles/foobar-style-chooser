@@ -79,7 +79,7 @@
 	},
 	{
 		"title" : "other",
-		"hidden" : "true",
+		"isHidden" : true,
 		"styles" : [
 			"Active",
 			"Atmosphere",
