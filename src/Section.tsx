@@ -8,7 +8,7 @@ export interface SectionProps {
 	readonly title: string;
 	readonly styles: string[];
 	readonly selectedStyles: string[];
-	readonly handleStyleClick: (style: string)=> void;
+	readonly handleStyleClick: (style: string) => void;
 }
 
 export default function Section({ title, styles, selectedStyles, handleStyleClick }: SectionProps) {

@@ -2,7 +2,7 @@ import './styles/Result.css';
 
 interface TextBoxProps {
 	readonly selectedStyles: string[];
-	readonly setSelectedStyles: (selectedStyles: string[])=> void;
+	readonly setSelectedStyles: (selectedStyles: string[]) => void;
 }
 
 export default function Result({ selectedStyles, setSelectedStyles }: TextBoxProps) {

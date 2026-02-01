@@ -6,7 +6,7 @@ import type { MouseEvent } from 'react';
 export interface StyleProps {
 	readonly title: string;
 	readonly isSelected: boolean;
-	readonly onStyleClick: (ev: MouseEvent)=> void;
+	readonly onStyleClick: (ev: MouseEvent) => void;
 }
 
 export default function Style({ title, isSelected, onStyleClick }: StyleProps) {
