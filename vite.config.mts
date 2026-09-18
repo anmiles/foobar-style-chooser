@@ -12,4 +12,7 @@ export default defineConfig({
 			'.jsx', '.tsx', '.json',
 		],
 	},
+	build: {
+		target: 'es2020',
+	},
 });
